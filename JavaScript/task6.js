@@ -2,8 +2,8 @@
 scope behavior and explain the results. [var vs let vs const] */
 
 function myVariables() {
-    var innerVar = "Elon Musk";
-    var outerVar = "Mark Zukerberg"
+    var innerVar = "Parth Nakum";
+    var outerVar = "Elon Musk"
     
     let innerLet = 21;
     let outerLet = 22;
