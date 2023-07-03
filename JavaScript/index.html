@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <!-- Task 1 -->
+    <h2>Task 1: Variables and Data Types </h2>
+    <h3>Declare a variable using var, let, and const. Assign different data types to each variable and print their values.</h3>
+
+    <p style="display: inline;">Value of myVar: </p><p id="myVar" style="display: inline;"></p> <br>
+    <p style="display: inline;">Value of myLet: </p><p id="myLet" style="display: inline;"></p> <br>
+    <p style="display: inline;">Value of myConst:  </p><p id="myConst" style="display: inline;"></p> <br> <br>
+
+    <button onclick="task1()">Task-1</button> <br>
+    <script src="task1.js"></script>
+    
+
+    <!-- Task 2 -->
+    <h2>Task 2: Operators and Expressions </h2>
+    <h3>Write a function that takes two numbers as arguments and returns their sum, difference,
+        product, and quotient using arithmetic operators.</h3>
+
+    <p style="display: inline;">Number 1: </p><p id="num1" style="display: inline;"></p> <br>
+    <p style="display: inline;">Number 2: </p><p id="num2" style="display: inline;"></p> <br>
+    <p style="display: inline;">Summation: </p><p id="sum" style="display: inline;"></p> <br>
+    <p style="display: inline;">Difference: </p><p id="diff" style="display: inline;"></p> <br>
+    <p style="display: inline;">Multiplication: </p><p id="mul" style="display: inline;"></p> <br>
+    <p style="display: inline;">Division: </p><p id="div" style="display: inline;"></p> <br><br>
+    <button onclick="arithmetic()">Task-2</button>
+    <script src="task2.js"></script>
+
+    <!-- Task-3 -->
+    <h2>Task 3: Control Flow</h2>
+    <h3>Write a program that prompts the user to enter their age. Based on their age, display
+        different messages: <br>
+        ○ If the age is less than 18, display "You are a minor." <br>
+        ○ If the age is between 18 and 65, display "You are an adult." <br>
+        ○ If the age is 65 or older, display "You are a senior citizen."</h3>
+    
+    <p style="display: inline;">Your age is </p> <p id="age" style="display: inline;"></p> <br>
+    <p id="x" style="display: inline;"></p> <br><br>
+    <button onclick="ageCriteria()">Task-3</button>
+    <script src="task3.js"></script>
+
+    <!-- Task-4 -->
+    <h2>Task 4: Functions</h2>
+    <h3>Write a function that takes an array of salary as an argument and returns the min/max
+        salary in the array.</h3>
+
+    <p style="display: inline;">Minimum Salary is </p> <p id="minsal" style="display: inline;"></p> <br>
+    <p style="display: inline;">Maximum Salary is </p> <p id="maxsal" style="display: inline;"></p> <br><br>
+    <button onclick="salaryMinMax(salaries)">Task-4</button>
+    <script src="task4.js"></script>
+
+
+    <!-- Task-5 -->
+    <h2>Task 5: Arrays and Objects</h2>
+    <h3>Create an array of your favorite books. Write a function that takes the array as an
+        argument and displays each book title on a separate line.</h3>
+
+    <p>Books: </p> <ul id="bookList"></ul>
+    <button onclick="displayBooks(favBooks)">Task-5</button>
+    <script src="task5.js"></script>
+
+    <!-- Task-6 -->
+    <h2>Task 6: Scope and Hoisting</h2>
+    <h3>Declare a variable inside a function and try to access it outside the function. Observe the
+        scope behavior and explain the results. [var vs let vs const]</h3>
+
+    <p style="display: inline;">innerVar: </p> <p id="innerVar" style="display: inline;"></p> <br>
+    <p style="display: inline;">innerLet: </p> <p id="innerLet" style="display: inline;"></p> <br>
+    <p style="display: inline;">innerConst: </p> <p id="innerConst" style="display: inline;"></p> <br>
+    <p style="display: inline;">outerVar: </p> <p id="outerVar" style="display: inline;"></p> <br>
+    <p style="display: inline;">outerLet: </p> <p id="outerLet" style="display: inline;"></p> <br>
+    <p style="display: inline;">outerConst: </p> <p id="outerConst" style="display: inline;"></p> <br><br>
+
+
+    <button onclick="myVariables()">Task-6</button>
+    <script src="task6.js"></script>
+
+
+    <!-- Task-7 -->
+    <h2>Task 7: DOM Manipulation</h2>
+    <h3>Create an HTML page with a button. Write JavaScript code that adds an event listener to
+        the button and changes its text when clicked.</h3>
+
+    <button id="myButton">Task-7</button>
+    <script src="task7.js"></script>
+
+    <!-- Task-8 -->
+    <h2>Task 8: Error Handling</h2>
+    <h3>Write a function that takes a number as an argument and throws an error if the number
+        is negative. Handle the error and display a custom error message.</h3>
+
+    <p style="display: inline;">Number: </p> <p id="number" style="display: inline;"></p> <br>
+    <p id="error" style="display: inline;"></p> <br><br>
+    <button onclick="checkPositiveNumber(number)">Task-8</button>
+    <script src="task8.js"></script>
+
+    <!-- Task-9 -->
+    <h2>Task 9: Asynchronous JavaScript</h2>
+    <h3>Write a function that uses setTimeout to simulate an asynchronous operation. Use a
+        callback function to handle the result.</h3>
+ 
+    <p id="results" style="display: inline;"></p> <br><br>
+    <button onclick="asynchronousOperation(handleResult)">Task-9</button>
+    <script src="task9.js"></script> <br><br><br>
+</body>
+</html>
