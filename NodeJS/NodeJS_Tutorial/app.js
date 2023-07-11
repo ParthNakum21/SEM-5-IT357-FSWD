@@ -8,6 +8,7 @@
 // - event driven programming to node js
 
 //built in class
+const { error } = require('console');
 const EventEmmiter = require('events');
 const eventEmmiter = new EventEmmiter(); //object
 
@@ -52,34 +53,82 @@ tata.emit('name');
 
 //-------------------Working with the read line module----------------------
 
-const readline = require('readline'); // realine module   
-const rl = readline.createInterface({input : process.stdin, output : process.stdout});
+// const readline = require('readline'); // realine module   
+// const rl = readline.createInterface({input : process.stdin, output : process.stdout});
 
-let num1 = Math.floor((Math.random()*10)+1);
-let num2 = Math.floor((Math.random()*10)+1);
+// let num1 = Math.floor((Math.random()*10)+1);
+// let num2 = Math.floor((Math.random()*10)+1);
 
-let answer = num1 + num2;
+// let answer = num1 + num2;
 
-rl.question(`What is ${num1} + ${num2}? \n`, 
-(userInput) => {
-    if(userInput.trim() == answer){
-        rl.close();
-    }
-    else{
-        rl.setPrompt('Incorrect response, please try again \n');
-        rl.prompt();
-        rl.on('line',(userInput)=>{
-            if(userInput.trim() == answer){
-                rl.close();
-            }
-            else{
-                rl.setPrompt(`Your answer of ${userInput} is incorrect, try again \n`);
-                rl.prompt();
-            }
-        })
-    }
-});
+// rl.question(`What is ${num1} + ${num2}? \n`, 
+// (userInput) => {
+//     if(userInput.trim() == answer){
+//         rl.close();
+//     }
+//     else{
+//         rl.setPrompt('Incorrect response, please try again \n');
+//         rl.prompt();
+//         rl.on('line',(userInput)=>{
+//             if(userInput.trim() == answer){
+//                 rl.close();
+//             }
+//             else{
+//                 rl.setPrompt(`Your answer of ${userInput} is incorrect, try again \n`);
+//                 rl.prompt();
+//             }
+//         })
+//     }
+// });
 
-rl.on('close',()=>{
-    console.log('Correct!!');
-});
+// rl.on('close',()=>{
+//     console.log('Correct!!');
+// });
+
+
+//-------------Working with the File System Module-I   ------------
+
+// const fs = require('fs');
+// fs.writeFile('example.txt',"This is an example.",(err)=>{
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         console.log("File successfully created.");
+//         fs.readFile('example.txt','utf8',(err,file)=>{
+//             if(err){
+//                 console.log(err);
+//             }
+//             else{
+//                 console.log(file);
+//             }
+//         });
+//     }
+// });
+
+// fs.rename('example.txt' , 'example2.txt', (err)=>{
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         console.log("File renamed successfully.")
+//     }
+// });
+
+// fs.appendFile('example2.txt','Some data being appended', (err)=>{
+//     if(err){
+//         console.log(err);
+//     }
+//     else {
+//         console.log("Data appened successfully");
+//     }
+// });
+
+// fs.unlink('example2.txt' , (err)=>{
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         console.log("File deleted Successfully");
+//     }
+// });
