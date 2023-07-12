@@ -135,7 +135,7 @@ tata.emit('name');
 
 //---------------Working with the File System module-II   -----------------------
 
-const fs = require('fs');
+//const fs = require('fs');
 
 // fs.mkdir('tut',(err)=>{
 //     if(err){
@@ -170,25 +170,30 @@ const fs = require('fs');
 //     }
 // });
 
-fs.readdir('example',(err,files)=>{
-    if(err){
-        console.log(err);
-    }
-    else{
-        for(let file of files){
-            if(err){
-                console.log(err);
-            }
-            else{
-                fs.unlink('./example/'+file,(err)=>{
-                    if(err){
-                        console.log(err);
-                    }
-                    else{
-                        console.log("File deleted succesfully");
-                    }
-                });
-            }
-        }
-    }
-});
+// fs.readdir('example',(err,files)=>{
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         for(let file of files){
+//             if(err){
+//                 console.log(err);
+//             }
+//             else{
+//                 fs.unlink('./example/'+file,(err)=>{
+//                     if(err){
+//                         console.log(err);
+//                     }
+//                     else{
+//                         console.log("File deleted succesfully");
+//                     }
+//                 });
+//             }
+//         }
+//     }
+// });
+
+//-----------Working with readable and writeable streams-----------------
+
+const fs = require('fs');
+fs.createReadStream();
