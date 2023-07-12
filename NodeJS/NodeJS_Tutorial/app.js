@@ -132,3 +132,63 @@ tata.emit('name');
 //         console.log("File deleted Successfully");
 //     }
 // });
+
+//---------------Working with the File System module-II   -----------------------
+
+const fs = require('fs');
+
+// fs.mkdir('tut',(err)=>{
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         fs.writeFile('./tut/example.txt','123', (err)=>{
+//             if(err){
+//                 console.log(err);
+//             }
+//             else{
+//                 console.log("File created successfully.")
+//             }
+//         } )
+//     }
+// });
+
+
+// fs.unlink('./tut/example.txt',(err)=>{
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         fs.rmdir('tut',(err)=>{
+//             if(err){
+//                 console.log(err);
+//             }
+//             else{
+//                 console.log("Folder deleted.")
+//             }
+//         });
+//     }
+// });
+
+fs.readdir('example',(err,files)=>{
+    if(err){
+        console.log(err);
+    }
+    else{
+        for(let file of files){
+            if(err){
+                console.log(err);
+            }
+            else{
+                fs.unlink('./example/'+file,(err)=>{
+                    if(err){
+                        console.log(err);
+                    }
+                    else{
+                        console.log("File deleted succesfully");
+                    }
+                });
+            }
+        }
+    }
+})
