@@ -231,9 +231,24 @@ stream uses smaller buffer size which is memory efficient. data to be read and w
 
 
 //example og uncompress the file
-const fs = require('fs');
-const zlib = require('zlib');
-const gunzip = zlib.createGunzip();
-const readStream = fs.createReadStream('./example3.txt.gz');
-const writeStream = fs.createWriteStream('uncompressed.txt');
-readStream.pipe(gunzip).pipe(writeStream);
+// const fs = require('fs');
+// const zlib = require('zlib');
+// const gunzip = zlib.createGunzip();
+// const readStream = fs.createReadStream('./example3.txt.gz');
+// const writeStream = fs.createWriteStream('uncompressed.txt');
+// readStream.pipe(gunzip).pipe(writeStream);
+
+//------------------------Creating a HTTP server usiing HTTP module----------------------------
+const http = require('http');
+const server = http.createServer((req,res)=>{
+    if(req.url === '/'){
+        res.write('Hello World!, \nThis is Parth Nakum');
+        res.end(); // send back to user
+    }
+    else{
+        res.write('Using some other domain');
+        res.end();
+    }  
+});
+
+server.listen(3000);
