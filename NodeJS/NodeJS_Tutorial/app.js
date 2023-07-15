@@ -202,3 +202,20 @@ const writeStream = fs.createWriteStream('example2.txt');
 readStream.on('data',(chunk)=>{ //no need to wait for whole file to load.
     writeStream.write(chunk);
 });
+
+/*
+//-------------Why you should use streams----------------
+
+
+1. What happens when we try to read large file by readFile system?
+--> we get an error "File size is greater than Buffer" 
+read file uses a full buffer. (i need the buffer as same size as file size).
+but if we use readStream (as expmple above for large file) it uses buffer too but,
+it uses very very small buffer. in that case we are reading a file in chunks.
+when event occur we are getting a chunk of the file (not attempting to read entire file at once).
+stream uses smaller buffer size which is memory efficient. data to be read and written in chunks.
+
+*/
+
+//------------------------Pipes and Pipe Chaining--------------------------
+/**send readable string to its destination */
