@@ -99,3 +99,18 @@ server.listen(3000,()=>{
 // server.listen(3000,()=>{
 //     console.log("Server is running and listening on port 3000");
 // })
+
+/*
+
+//-------------Why you should use streams----------------
+
+
+1. What happens when we try to read large file by readFile system?
+--> we get an error "File size is greater than Buffer" 
+read file uses a full buffer. (i need the buffer as same size as file size).
+but if we use readStream (as expmple above for large file) it uses buffer too but,
+it uses very very small buffer. in that case we are reading a file in chunks.
+when event occur we are getting a chunk of the file (not attempting to read entire file at once).
+stream uses smaller buffer size which is memory efficient. data to be read and written in chunks.
+
+*/
