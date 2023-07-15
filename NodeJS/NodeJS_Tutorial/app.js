@@ -7,6 +7,7 @@
 //-----------The Events Module & EventEmmiter Class-----------
 // - event driven programming to node js
 
+/*
 //built in class
 const { error } = require('console');
 const EventEmmiter = require('events');
@@ -49,7 +50,7 @@ tata.on('name',()=>{
 elon.emit('name');
 zuck.emit('name');
 tata.emit('name');
-
+*/
 
 //-------------------Working with the read line module----------------------
 
@@ -196,12 +197,12 @@ tata.emit('name');
 
 //-----------Working with readable and writeable streams-----------------
 
-const fs = require('fs');
-const readStream = fs.createReadStream('./example.txt','utf8');
-const writeStream = fs.createWriteStream('example2.txt');
-readStream.on('data',(chunk)=>{ //no need to wait for whole file to load.
-    writeStream.write(chunk);
-});
+// const fs = require('fs');
+// const readStream = fs.createReadStream('./example.txt','utf8');
+// const writeStream = fs.createWriteStream('example2.txt');
+// readStream.on('data',(chunk)=>{ //no need to wait for whole file to load.
+//     writeStream.write(chunk);
+// });
 
 /*
 //-------------Why you should use streams----------------
@@ -219,3 +220,20 @@ stream uses smaller buffer size which is memory efficient. data to be read and w
 
 //------------------------Pipes and Pipe Chaining--------------------------
 /**send readable string to its destination */
+
+//example of compressing the file
+// const fs = require('fs');
+// const zlib = require('zlib'); //compressing file
+// const gzip = zlib.createGzip(); //transformed string
+// const readStream = fs.createReadStream('./example.txt','utf8');
+// const writeStream = fs.createWriteStream('./example3.txt.gz');
+// readStream.pipe(gzip).pipe(writeStream); // gzip manuplates data and compress it
+
+
+//example og uncompress the file
+const fs = require('fs');
+const zlib = require('zlib');
+const gunzip = zlib.createGunzip();
+const readStream = fs.createReadStream('./example3.txt.gz');
+const writeStream = fs.createWriteStream('uncompressed.txt');
+readStream.pipe(gunzip).pipe(writeStream);
