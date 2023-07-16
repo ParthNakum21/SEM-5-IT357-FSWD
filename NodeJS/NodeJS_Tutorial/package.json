@@ -1,0 +1,14 @@
+{
+  "name": "nodejs_tutorial",
+  "version": "1.0.0",
+  "description": "nodejs tutorial",
+  "main": "app.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "parth nakum",
+  "license": "ISC"
+}

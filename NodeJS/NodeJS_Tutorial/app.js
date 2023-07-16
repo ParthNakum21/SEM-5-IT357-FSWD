@@ -253,6 +253,7 @@ stream uses smaller buffer size which is memory efficient. data to be read and w
 
 // server.listen(3000);
 
+/*
 //---------Serving static files with HTTP and File System Modules-----------
 
 const http = require('http');
@@ -276,3 +277,18 @@ http.createServer((req,res)=>{
 
 }).listen(3000);
 
+
+*/
+//---------------------Create package.json Using npm init----------------------
+//paackage.json to hold all meta data (name of project, version no, etc)
+//npm init
+
+//---------------------install packges using npm---------------------------
+//package: reusable code that we can include within our own application
+// npm install lodash         (i - install | lodash - package name)
+// npm uninstall lodash
+
+// const _ = require('lodash');
+// let example = _.fill([1,2,3,4,5],"parth", 1, 4);
+
+// console.log(example);
