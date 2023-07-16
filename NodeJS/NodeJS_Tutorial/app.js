@@ -239,16 +239,40 @@ stream uses smaller buffer size which is memory efficient. data to be read and w
 // readStream.pipe(gunzip).pipe(writeStream);
 
 //------------------------Creating a HTTP server usiing HTTP module----------------------------
-const http = require('http');
-const server = http.createServer((req,res)=>{
-    if(req.url === '/'){
-        res.write('Hello World!, \nThis is Parth Nakum');
-        res.end(); // send back to user
-    }
-    else{
-        res.write('Using some other domain');
-        res.end();
-    }  
-});
+// const http = require('http');
+// const server = http.createServer((req,res)=>{
+//     if(req.url === '/'){
+//         res.write('Hello World!, \nThis is Parth Nakum');
+//         res.end(); // send back to user
+//     }
+//     else{
+//         res.write('Using some other domain');
+//         res.end();
+//     }  
+// });
 
-server.listen(3000);
+// server.listen(3000);
+
+//---------Serving static files with HTTP and File System Modules-----------
+
+const http = require('http');
+const fs = require('fs');
+
+http.createServer((req,res)=>{
+    //for html file
+    // const readStreamHTML = fs.createReadStream('./static/index.html');
+    // res.writeHead(200,{'Content-Type' : 'text/html'}); //expected data
+    // readStreamHTML.pipe(res);
+
+    // //for json file
+    // const readStreamJSON = fs.createReadStream('./static/stat.json');
+    // res.writeHead(200,{'Content-Type' : 'application/json'});
+    // readStreamJSON.pipe(res);
+
+    //for image
+    const readStreamIMAGE = fs.createReadStream('./static/ironman2.jpg');
+    res.writeHead(200,{'Content-Type': 'image/jpg'});
+    readStreamIMAGE.pipe(res);
+
+}).listen(3000);
+
