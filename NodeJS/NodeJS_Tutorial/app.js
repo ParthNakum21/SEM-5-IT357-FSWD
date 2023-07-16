@@ -292,3 +292,17 @@ http.createServer((req,res)=>{
 // let example = _.fill([1,2,3,4,5],"parth", 1, 4);
 
 // console.log(example);
+
+/*
+//------------------Semantic Versioning--------------------
+// standard that lot of Node JS packages follows & allows what kind of changes have occcured
+// "^4.17.11" // major.minor.patch  
+//patch - bug fixes
+//minor - minor update, adds new functionality (Non breacking change update)
+//major - major update, breacking change (not competable with old version)
+// ^ - 4.x.x  --  go ahead and download x.x new updates (minor.patch)
+// ~ - 4.17.x  --  do not update that package
+// no sign - only version we have
+
+*/
+
