@@ -179,7 +179,7 @@ fs.readFile('student_data.txt','utf8',(err,data)=>{
 const readline = require('readline');
 const fs = require('fs');
 
-// Create a readline interface to read input from the user
+//readline interface to read input from the user
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
@@ -200,7 +200,7 @@ function promptEmployeeInfo() {
         // Convert the employee object to JSON format
         const employeeData = JSON.stringify(employee, null, 2);
 
-        // Write the employee data to the file 'employee-data.json'
+        // Write the employee data to the file 'employee_data.json'
         fs.writeFile('employee-data.json', employeeData, 'utf8', (err) => {
           if (err) {
             console.error('Error writing to file:', err);
@@ -215,19 +215,19 @@ function promptEmployeeInfo() {
   });
 }
 
-// Call the function to start the prompt for employee information
+// Call the function to input employee information
 promptEmployeeInfo();
 
 */
 
-/*
+
 //------------------------Task-6--------------------------
 
 const fs = require('fs');
 
 function compareFiles(file1Path, file2Path) {
   try {
-    // Read the contents of both files
+    // Read files
     const file1Content = fs.readFileSync(file1Path, 'utf8');
     const file2Content = fs.readFileSync(file2Path, 'utf8');
 
@@ -267,7 +267,7 @@ const file1Path = 'file1.txt';
 const file2Path = 'file2.txt';
 compareFiles(file1Path, file2Path);
 
-*/
+
 
 /*
 
