@@ -67,5 +67,40 @@ userInput();
 
 */
 
+/**
+Query String Operation:
+● Write a Node.js program that takes a URL with a query string as input and extracts the
+key-value pairs from the query string using the querystring module. The program should
+display the extracted key-value pairs as output.
+ */
 
+
+const url = require('url');
+const querystring = require('querystring');
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input : process.stdin,
+    output : process.stdout
+});
+
+function extractQueryParams(inputURL){
+    const parsedURL = url.parse(inputURL);
+    const queryParams = querystring.parse(parsedURL.query);
+    return queryParams;
+}
+
+function userInput(){
+    rl.question('Enter URL with query string: ',(inputURL)=>{
+        const queryParams = extractQueryParams(inputURL);
+
+        console.log('Extracted key-value pairs: ');
+        for(const key in queryParams){
+            console.log(`${key} : ${queryParams[key]}`);
+        }
+        rl.close();
+    });
+}
+
+userInput();
 
