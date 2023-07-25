@@ -67,13 +67,13 @@ userInput();
 
 */
 
-/**
-Query String Operation:
-● Write a Node.js program that takes a URL with a query string as input and extracts the
-key-value pairs from the query string using the querystring module. The program should
-display the extracted key-value pairs as output.
- */
+/*
 
+/*
+// Query String Operation:
+// ● Write a Node.js program that takes a URL with a query string as input and extracts the
+// key-value pairs from the query string using the querystring module. The program should
+// display the extracted key-value pairs as output.
 
 const url = require('url');
 const querystring = require('querystring');
@@ -104,3 +104,76 @@ function userInput(){
 
 userInput();
 
+*/
+
+/**
+ * Path Operations:
+● Create a program that accepts two file paths as input and uses the path module to
+determine if they refer to the same file.
+ */
+
+/*
+const path = require('path');
+const readline = require('readline');
+const fs = require('fs');
+
+const rl = readline.createInterface({
+    input : process.stdin,
+    output : process.stdout
+})
+
+
+function arePathEqual(filePath1,filePath2){
+    const resolvePath1 = path.resolve(filePath1);
+    const resolvePath2 = path.resolve(filePath2);
+
+    return resolvePath1 === resolvePath2;
+}
+function userInput(){
+    rl.question('Enter the First file Path: ',(filePath1)=>{
+        rl.question('Enter the Second file Path: ', (filePath2)=>{
+            const pathEqual = arePathEqual(filePath1,filePath2);
+
+            if(pathEqual){
+                console.log('Both file paths refer to same files');
+            }
+            else {
+                console.log('The file paths refers to different files');
+            }
+            rl.close();
+        });
+    })
+
+}
+
+userInput();
+*/
+
+/**
+ * ● Implement a function that accepts a file path as input and uses the path module to
+extract the file extension. Display the extracted extension to the user.
+ */
+
+const path = require('path');
+const fs = require('fs');
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input : process.stdin,
+    output : process.stdout
+});
+
+function extractFileExtention(filePath){
+    const fileExtention = path.extname(filePath);
+    return fileExtention;
+}
+
+function userInput(){
+    rl.question('Enter file path: ',(filePath)=>{
+        const fileExtension = extractFileExtention(filePath);
+        console.log('Extracted file extention: ', fileExtension);
+        rl.close()
+    })
+}
+
+userInput();
