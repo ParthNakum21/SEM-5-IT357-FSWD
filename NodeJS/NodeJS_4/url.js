@@ -153,7 +153,7 @@ userInput();
  * ● Implement a function that accepts a file path as input and uses the path module to
 extract the file extension. Display the extracted extension to the user.
  */
-
+/*
 const path = require('path');
 const fs = require('fs');
 const readline = require('readline');
@@ -174,6 +174,72 @@ function userInput(){
         console.log('Extracted file extention: ', fileExtension);
         rl.close()
     })
+}
+
+userInput();
+*/
+
+
+/**
+ * File Paths and Operations:
+● Implement a program that accepts a file path as input and uses the path module to
+extract the directory name and base name. Display the extracted values separately.
+*/
+/*
+const readline = require('readline');
+const path = require('path');
+
+const rl = readline.createInterface({
+    input : process.stdin,
+    output : process.stdout
+});
+
+function extractDirectoryAndBase(filePath){
+    const directoryName = path.dirname(filePath);
+    const baseName = path.basename(filePath);
+    return {directoryName,baseName};
+}
+
+function userInput(){
+    rl.question('Enter file path: ',(filePath) =>{
+        const {directoryName, baseName} = extractDirectoryAndBase(filePath);
+        console.log("Extracted Directory Name is ", directoryName);
+        console.log("Extracted Base Name is ",baseName);
+        rl.close();
+    })
+}
+
+userInput();
+*/
+/*
+● Write a function that uses the fs module to check if a given file path exists. Display a
+success message if the file exists, or an error message if it doesn't.
+ */
+
+
+const fs = require('fs');
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input : process.stdin,
+    output : process.stdout
+});
+
+function checkFileExisit(filePath) {
+    fs.access(filePath,fs.constants.F_OK,(err) =>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            console.log("Success: File Exist!");
+        }
+    });
+}
+function userInput(){
+    rl.question('Enter file path: ', (filePath)=>{
+        const pathExist = checkFileExisit(filePath);
+        rl.close();
+    });
 }
 
 userInput();
