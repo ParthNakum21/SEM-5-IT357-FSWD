@@ -1,0 +1,4 @@
+Hey, This is Parth Nakum.
+This is my file6.2
+This file is for the demo of practical 6
+which includes file comaprison.

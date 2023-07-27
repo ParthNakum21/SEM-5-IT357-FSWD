@@ -224,6 +224,73 @@ promptEmployeeInfo();
 //------------------------Task-6--------------------------
 
 const fs = require('fs');
+const readline = require('readline');
+
+function readFile(filePath){
+  return new Promise((resolve,reject)=>{
+    fs.readFile(filePath,'utf8',(err,data)=>{
+      if(err) reject(err);
+      else resolve(data);
+    })
+  })
+}
+
+function compareFiles(file1Path,file2Path){
+  Promise.all([readFile(file1Path),readFile(file2Path)]).then(([file1Content,file2Content])=>{
+    const lines1 = file1Content.split('\n');
+    const lines2 = file2Content.split('\n');
+
+    const largerFile = lines1.length > lines2.length ? file1Path : file1Path;
+    
+    console.log(`The Larger file is ${largerFile}`);
+
+    const differences = [];
+    for (let i = 0; i < Math.min(lines1.length,lines2.length); i++) {
+      if(lines1[i] !== lines2[i]){
+        differences.push({
+          lineNumber : i+1,
+          file1 : lines1[i],
+          file2 : lines2[i]
+        });
+      }
+    }
+    console.log("Differences: ");
+
+    differences.forEach((diff)=>{
+      console.log(`Line ${diff.lineNumber}:`);
+      console.log(`${file1Path} : ${diff.file1}`);
+      console.log(`${file2Path} : ${diff.file2}`);
+      console.log('-------');
+    });
+  })
+  .catch((err)=>{
+    console.error("Error reading file: ",err);
+  });
+}
+
+const rl = readline.createInterface({
+  input : process.stdin,
+  output : process.stdout
+});
+
+function userInput(){
+  rl.question('Enter First file: ', (file1Path)=>{
+    rl.question('Enter Second file: ', (file2Path)=>{
+      compareFiles(file1Path, file2Path);
+      rl.close();
+    });
+  });
+}
+
+userInput();
+
+// const file1Path = 'file61.txt';
+// const file2Path = 'file62.txt';
+
+
+
+/*
+const fs = require('fs');
 
 function compareFiles(file1Path, file2Path) {
   try {
@@ -263,11 +330,11 @@ function compareFiles(file1Path, file2Path) {
 }
 
 // Call the function and provide the paths to the files you want to compare
-const file1Path = 'file1.txt';
-const file2Path = 'file2.txt';
+const file1Path = 'file61.txt';
+const file2Path = 'file62.txt';
 compareFiles(file1Path, file2Path);
 
-
+*/
 
 /*
 
