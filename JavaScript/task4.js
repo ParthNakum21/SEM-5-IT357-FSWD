@@ -17,4 +17,13 @@ function salaryMinMax(salaries) {
     }
     document.getElementById("maxsal").innerHTML=maxsal;
     document.getElementById("minsal").innerHTML=minsal;
+
+    return {
+        maxsal : maxsal,
+        minsal : minsal
+    }
 }
+
+var results = salaryMinMax(salaries);
+console.log(results.minsal);
+console.log(results.maxsal);
