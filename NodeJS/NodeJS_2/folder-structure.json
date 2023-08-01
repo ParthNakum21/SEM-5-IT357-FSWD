@@ -1,0 +1,31 @@
+{
+  "folders": [
+    {
+      "name": "Documents",
+      "subfolders": [
+        {
+          "name": "Projects",
+          "subfolders": []
+        },
+        {
+          "name": "Reports",
+          "subfolders": []
+        }
+      ]
+    },
+    {
+      "name": "Pictures",
+      "subfolders": []
+    }
+  ],
+  "files": [
+    {
+      "name": "file1.txt",
+      "content": "This is the content of file 1."
+    },
+    {
+      "name": "file2.txt",
+      "content": "This is the content of file 2."
+    }
+  ]
+}
