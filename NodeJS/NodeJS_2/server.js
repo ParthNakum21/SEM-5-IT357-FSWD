@@ -420,46 +420,46 @@
 // /*
 //Now, you can create the file/folder structure using the following Node.js code:
 
-const fs = require('fs');
-const path = require('path');
+// const fs = require('fs');
+// const path = require('path');
 
-function createFoldersAndFiles(basePath, folders, files) {
-  try {
-    // Create folders
-    for (const folder of folders) {
-      const folderPath = path.join(basePath, folder.name);
-      fs.mkdirSync(folderPath);
-      if (folder.subfolders.length > 0) {
-        createFoldersAndFiles(folderPath, folder.subfolders, []);
-      }
-    }
+// function createFoldersAndFiles(basePath, folders, files) {
+//   try {
+//     // Create folders
+//     for (const folder of folders) {
+//       const folderPath = path.join(basePath, folder.name);
+//       fs.mkdirSync(folderPath);
+//       if (folder.subfolders.length > 0) {
+//         createFoldersAndFiles(folderPath, folder.subfolders, []);
+//       }
+//     }
 
-    // Create files
-    for (const file of files) {
-      const filePath = path.join(basePath, file.name);
-      fs.writeFileSync(filePath, file.content);
-    }
+//     // Create files
+//     for (const file of files) {
+//       const filePath = path.join(basePath, file.name);
+//       fs.writeFileSync(filePath, file.content);
+//     }
 
-    console.log('Folder and file structure created successfully.');
-  } catch (err) {
-    console.error('Error creating folder and file structure:', err);
-  }
-}
+//     console.log('Folder and file structure created successfully.');
+//   } catch (err) {
+//     console.error('Error creating folder and file structure:', err);
+//   }
+// }
 
-// Read the JSON file
-fs.readFile('folder-structure.json', 'utf8', (err, data) => {
-  if (err) {
-    console.error('Error reading JSON file:', err);
-    return;
-  }
+// // Read the JSON file
+// fs.readFile('folder-structure.json', 'utf8', (err, data) => {
+//   if (err) {
+//     console.error('Error reading JSON file:', err);
+//     return;
+//   }
 
-  try {
-    const folderData = JSON.parse(data);
-    createFoldersAndFiles('.', folderData.folders, folderData.files);
-  } catch (err) {
-    console.error('Error parsing JSON:', err);
-  }
-});
+//   try {
+//     const folderData = JSON.parse(data);
+//     createFoldersAndFiles('.', folderData.folders, folderData.files);
+//   } catch (err) {
+//     console.error('Error parsing JSON:', err);
+//   }
+// });
 
 // Structure:
 
@@ -473,69 +473,61 @@ fs.readFile('folder-structure.json', 'utf8', (err, data) => {
 
 // //-----------------------Task-9------------------------
 
-// /*
-// //create file:
-// const fs = require('fs');
+//create file:
+const fs = require('fs');
 
-// fs.writeFile('example.txt', 'This is a new file!', (err) => {
-//   if (err) {
-//     console.error('Error creating file:', err);
-//   } else {
-//     console.log('File created successfully.');
-//   }
-// });
+fs.writeFile('example.txt', 'This is a new file!', (err) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log('File created successfully.');
+  }
+});
 
-// //read file
-// fs.readFile('example.txt', 'utf8', (err, data) => {
-//   if (err) {
-//     console.error('Error reading file:', err);
-//   } else {
-//     console.log('File content:', data);
-//   }
-// });
+//read file
+fs.readFile('example.txt', 'utf8', (err, data) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log('File content:', data);
+  }
+});
 
+//append file
+fs.appendFile('example.txt', '\nThis is additional content.', (err) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log('Content appended successfully.');
+  }
+});
 
-// //append file
-// fs.appendFile('example.txt', '\nThis is additional content.', (err) => {
-//   if (err) {
-//     console.error('Error appending to file:', err);
-//   } else {
-//     console.log('Content appended successfully.');
-//   }
-// });
+//delete file
+fs.unlink('renamed-example.txt', (err) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log('File deleted successfully.');
+  }
+});
 
+//rename file
+fs.rename('example.txt', 'renamed-example.txt', (err) => {
+  if (err) {
+    console.error('Error renaming file:', err);
+  } else {
+    console.log('File renamed successfully.');
+  }
+});
 
-// //delete file
-
-// fs.unlink('example.txt', (err) => {
-//   if (err) {
-//     console.error('Error deleting file:', err);
-//   } else {
-//     console.log('File deleted successfully.');
-//   }
-// });
-
-
-// //rename file
-// fs.rename('example.txt', 'renamed-example.txt', (err) => {
-//   if (err) {
-//     console.error('Error renaming file:', err);
-//   } else {
-//     console.log('File renamed successfully.');
-//   }
-// });
-
-
-// //list file in directory
-// fs.readdir('.', (err, files) => {
-//   if (err) {
-//     console.error('Error listing files/directories:', err);
-//   } else {
-//     console.log('Files/directories in the current directory:');
-//     files.forEach((file) => {
-//       console.log(file);
-//     });
-//   }
-// });
-
-// */
+//list file in directory
+fs.readdir('.', (err, files) => {
+  if (err) {
+    console.error('Error listing files/directories:', err);
+  } else {
+    console.log('Files/directories in the current directory:');
+    files.forEach((file) => {
+      console.log(file);
+    });
+  }
+});
