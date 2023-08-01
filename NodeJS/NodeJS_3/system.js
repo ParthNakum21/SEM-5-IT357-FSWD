@@ -49,6 +49,7 @@ console.log("Total System Memory: ",totalMemory, "bytes");
 console.log("Free Memory: ",freeMemory, "bytes");
 console.log("Percentage of Free Memory: ", (percentageFree).toFixed(2), "%");
 
+
 /*
 //-----------------------Task 2-------------------------------
 //Experiment with chalk, upper-case any other External modules
