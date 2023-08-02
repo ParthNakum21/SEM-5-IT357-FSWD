@@ -65,10 +65,10 @@ Create a function that utilizes the os module to display the total system memory
 
  */
 
-const myModule = require('./myModule');
+// const myModule = require('./myModule');
 
-const sum = myModule.addNumbers(21,21);
-const product = myModule.multiplyNumbers(21,21);
+// const sum = myModule.addNumbers(21,21);
+// const product = myModule.multiplyNumbers(21,21);
 
-console.log("Sum: ", sum);
-console.log("Product: ", product);
+// console.log("Sum: ", sum);
+// console.log("Product: ", product);
