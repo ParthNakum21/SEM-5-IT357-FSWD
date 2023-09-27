@@ -1,0 +1,75 @@
+.App{
+  text-align: center;
+  font-family: Arial,sans-serif;
+  background: #5cdb95;
+}
+
+.App-header{
+  background-color: #05386b;
+  padding: 20px;
+  color: white;
+}
+
+.product-page{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  /* background: #5cdb95; */
+  color: rgb(0, 0, 0);
+  padding: 10px;
+}
+
+.product{
+  border: 2px solid #6e6d6d;
+  padding: 20px;
+  margin: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+.product h2{
+  font-size: 1.5rem;
+  color: rgb(58, 58, 58);
+}
+
+.product p{
+  font-size: 1rem;
+  color: #c71309;
+}
+
+/* .product-list{
+  background:  #f3e37b;
+  padding-bottom: 30%;
+} */
+
+.product.page{
+  padding: 20px;
+}
+
+.checkbox{
+  /* background: #dbcc6d; */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.submit-button{
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: #edf5e1;
+}
+
+
+.counter-button{
+  background: #379683;
+  margin: 5px; 
+  padding: 5px 15px;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 20px;
+}
+
+.task-list{
+  background: #379683;
+  color:#1f303e;
+}
+
+.student-list{
+  background: #379683;
+}
